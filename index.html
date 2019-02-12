@@ -401,7 +401,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-12 11:53:50" itemprop="dateModified" datetime="2019-02-12T11:53:50+08:00">2019-02-12</time>
+                <time title="Modified: 2019-02-12 23:23:29" itemprop="dateModified" datetime="2019-02-12T23:23:29+08:00">2019-02-12</time>
               
             
           </span>
@@ -455,9 +455,38 @@
       
         
           
-            <h1 id="environment-dependency"><a href="#environment-dependency" class="headerlink" title="environment dependency"></a>environment dependency</h1><p>we need to have <code>node.js</code> and <code>git</code> already installed in our computer. </p>
-<p><img src="/2019/02/11/blogbuild/hexo_webpage.PNG" alt="hexo page"></p>
-<h1 id="installation"><a href="#installation" class="headerlink" title="installation"></a>installation</h1><h1 id="theme-setting"><a href="#theme-setting" class="headerlink" title="theme setting"></a>theme setting</h1><h1 id="github-deployment"><a href="#github-deployment" class="headerlink" title="github deployment"></a>github deployment</h1>
+            <h1 id="Environment-dependency"><a href="#Environment-dependency" class="headerlink" title="Environment dependency"></a>Environment dependency</h1><p>We need to have <a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a> and <a href="https://git-scm.com/" target="_blank" rel="noopener">git</a> already installed in our computer. </p>
+<p>The recommended way to install Node.js is using  <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>.</p>
+<p>After installation, we change the npm source to taobao mirror site in order to get a moderate download speed in China.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>We install <a href="https://hexo.io" target="_blank" rel="noopener">hexo</a> using npm by the following command in our git bash or PowerShell in our windows 10 x64 platform. </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><p>We initialize Hexo in the target folder by</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init</span><br></pre></td></tr></table></figure>
+<p>To generate static files</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo g</span><br></pre></td></tr></table></figure>
+<p>To start a local sever </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
+<p>Then we could see our website at <code>http://localhost:4000/</code>.</p>
+<h1 id="Theme-setting"><a href="#Theme-setting" class="headerlink" title="Theme setting"></a>Theme setting</h1><p>We change the theme to <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">NexT</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>And set <code>theme</code> field in site <code>_config.yml</code> to <code>next</code>.</p>
+<p>Customize <code>menu</code> field to get <code>tags</code> and <code>categories</code>  menu which we need to create manually.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page 'tags'</span><br><span class="line"><span class="meta">$</span> hexo new page 'categories'</span><br><span class="line"><span class="meta">$</span> hexo new page 'about'</span><br></pre></td></tr></table></figure>
+<p>and change the header of <code>index.md</code> in corresponding folders.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2019-02-11 13:50:31</span><br><span class="line">type: "tags"</span><br><span class="line">layout: "tags"</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-02-11 13:50:50</span><br><span class="line">type: "categories"</span><br><span class="line">layout: "categories"</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives</span></span><br><span class="line"><span class="attr">  about:</span> <span class="string">/about</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags</span></span><br><span class="line">  <span class="comment">#commonweal: /404.html</span></span><br></pre></td></tr></table></figure>
+<p>To write a new blog </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>Then we could edit the <strong>.md</strong> file in the  <code>_post</code> folder.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: building blog site using hexo + github </span><br><span class="line">date: 2019-02-11 13:44:27</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">- </span>tag1</span><br><span class="line"><span class="bullet">- </span>tag2</span><br><span class="line">...</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">- </span>catg1</span><br><span class="line">...</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>We could install a plugin to help us insert images in our article.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<p>And set the <code>post_asset_folder</code> setting in <code>_config.yml</code> to true.  When we create a new article, an asset folder with the same name will be created simultaneously, in which to we place our pictures. </p>
+<p>Then we can refer to our image like</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">alias</span>](<span class="link">aricle-name/pic-name.png</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="Github-deployment"><a href="#Github-deployment" class="headerlink" title="Github deployment"></a>Github deployment</h1>
           
         
       
