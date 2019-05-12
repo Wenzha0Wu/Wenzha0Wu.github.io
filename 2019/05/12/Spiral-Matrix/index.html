@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Description Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  example:  Input: [-2,1,-3,4,-1,2,1,-5,4] Output: 6">
-<meta name="keywords" content="dynamic programming">
+  <meta name="description" content="problem description given two integers  m and n ,  return a matrix with $n \times m$ elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.($1 \leq m,n \leq 100$)  exam">
+<meta name="keywords" content="grammar">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maximum subarray">
-<meta property="og:url" content="http://yoursite.com/2019/02/17/max-subarray/index.html">
+<meta property="og:title" content="Spiral Matrix">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/Spiral-Matrix/index.html">
 <meta property="og:site_name" content="WzW&#39;s Blog">
-<meta property="og:description" content="Description Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  example:  Input: [-2,1,-3,4,-1,2,1,-5,4] Output: 6">
+<meta property="og:description" content="problem description given two integers  m and n ,  return a matrix with $n \times m$ elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.($1 \leq m,n \leq 100$)  exam">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-12T02:37:37.166Z">
+<meta property="og:updated_time" content="2019-05-12T03:00:28.067Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maximum subarray">
-<meta name="twitter:description" content="Description Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  example:  Input: [-2,1,-3,4,-1,2,1,-5,4] Output: 6">
+<meta name="twitter:title" content="Spiral Matrix">
+<meta name="twitter:description" content="problem description given two integers  m and n ,  return a matrix with $n \times m$ elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.($1 \leq m,n \leq 100$)  exam">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/17/max-subarray/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/12/Spiral-Matrix/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>maximum subarray | WzW's Blog</title>
+  <title>Spiral Matrix | WzW's Blog</title>
   
 
 
@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/17/max-subarray/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/Spiral-Matrix/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wenzhao Wu">
@@ -357,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">maximum subarray
+          <h1 class="post-title" itemprop="name headline">Spiral Matrix
 
               
             
@@ -383,24 +383,12 @@
                 
               
 
-              <time title="Created: 2019-02-17 15:54:04" itemprop="dateCreated datePublished" datetime="2019-02-17T15:54:04+08:00">2019-02-17</time>
+              <time title="Created: 2019-05-12 10:33:56 / Modified: 11:00:28" itemprop="dateCreated datePublished" datetime="2019-05-12T10:33:56+08:00">2019-05-12</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-05-12 10:37:37" itemprop="dateModified" datetime="2019-05-12T10:37:37+08:00">2019-05-12</time>
               
             
           </span>
@@ -417,7 +405,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/fundamental/" itemprop="url" rel="index"><span itemprop="name">fundamental</span></a></span>
 
                 
                 
@@ -452,37 +440,20 @@
       
 
       
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><ul>
-<li><p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+        <h1 id="problem-description"><a href="#problem-description" class="headerlink" title="problem description"></a>problem description</h1><ul>
+<li><p>given two integers  <code>m</code> and <code>n</code> ,  return a matrix with $n \times m$ elements (<em>n</em> rows, <em>m</em> columns), all elements form 1 to <code>m*n</code>of the matrix in spiral order.($1 \leq m,n \leq 100$)</p>
 </li>
 <li><p>example:</p>
 <blockquote>
-<p>Input: [-2,1,-3,4,-1,2,1,-5,4]</p>
-<p>Output: 6</p>
-<p>Explanation: [4,-1,2,1] has the largest sum = 6</p>
+<p>input : </p>
+<figure class="highlight plain"><figcaption><span>3```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; output :</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>1 2 3<br>8 9 4<br>7 6 5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!---more---&gt;</span><br><span class="line"></span><br><span class="line">- [problem url](&lt;https://www.acwing.com/problem/content/description/758/&gt;)</span><br><span class="line"></span><br><span class="line"># solution</span><br><span class="line"></span><br><span class="line">- using `dx[] = &#123;0, 1, 0, -1&#125;, dy[] = &#123;1, 0, -1, 0&#125;` to present four directions</span><br><span class="line">- when it comes to corner, let  `d = (d + 1) % 4`</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int N = 110;</span><br><span class="line">int res[N][N];</span><br><span class="line">bool st[N][N];</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    int dx[] = &#123;0, 1, 0, -1&#125;, dy[] = &#123;1, 0, -1, 0&#125;;</span><br><span class="line">    int x = 0, y = 0, d = 0;</span><br><span class="line">    for(int i = 1 ; i &lt;= m*n; i++)&#123;</span><br><span class="line">        int a = x + dx[d], b = y + dy[d];</span><br><span class="line">        if(a &gt;= n || a &lt; 0 || b &gt;= m || b &lt; 0 || st[a][b])&#123;</span><br><span class="line">            d = (d + 1) % 4;</span><br><span class="line">            a = x + dx[d];</span><br><span class="line">            b = y + dy[d];</span><br><span class="line">        &#125;</span><br><span class="line">        res[x][y] = i;</span><br><span class="line">        st[x][y] = true;</span><br><span class="line">        x = a, y = b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for(int i = 0; i &lt; n; i++)&#123;</span><br><span class="line">        for(int j = 0; j &lt; m; j++)&#123;</span><br><span class="line">            cout &lt;&lt; res[i][j] &lt;&lt; &quot; &quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
-<a id="more"></a>
-<ul>
-<li><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener">problem url</a></li>
-</ul>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><ol>
-<li><p>Let <code>dp[i]</code> refer to the maximum sum end with <code>nums[i]</code></p>
-</li>
-<li><p>there are 2 situations:</p>
-<ul>
-<li><p>the subarray only contains one integer :</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = nums[i]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>the subarray  has multiple elements, begun with <code>nums[p]</code> and ended with <code>nums[i]</code>, which can be annotated as <code>nums[p]+...+nums[i-1]+nums[i] = dp[i-1]+nums[i]</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = max(nums[i],dp[i<span class="number">-1</span>]+nums[i])</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<p>so it is easy to write the code:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> dp[n];</span><br><span class="line">        dp[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            dp[i] = max(dp[i<span class="number">-1</span>]+nums[i],nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(dp[i]&gt;dp[k]) k=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -506,7 +477,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dynamic-programming/" rel="tag"># dynamic programming</a>
+            <a href="/tags/grammar/" rel="tag"># grammar</a>
           
         </div>
       
@@ -519,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/11/blogbuild/" rel="next" title="building blog site using Hexo + GitHub">
-                <i class="fa fa-chevron-left"></i> building blog site using Hexo + GitHub
+              <a href="/2019/02/21/Palindrome/" rel="next" title="Palindrome">
+                <i class="fa fa-chevron-left"></i> Palindrome
               </a>
             
           </div>
@@ -528,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/21/Palindrome/" rel="prev" title="Palindrome">
-                Palindrome <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -692,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Algorithm</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-description"><span class="nav-number">1.</span> <span class="nav-text">problem description</span></a></li></ol></div>
             
 
           </div>
