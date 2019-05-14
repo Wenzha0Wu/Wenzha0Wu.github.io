@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="problem description given two integers  m and n ,  return a matrix with $n \times m$ elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.($1 \leq m,n \leq 100$)  exam">
+  <meta name="description" content="problem description  given two integers m and n , return a matrix with \(n \times m\) elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.(\(1 \leq m,n \leq 100\))">
 <meta name="keywords" content="grammar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spiral Matrix">
 <meta property="og:url" content="http://yoursite.com/2019/05/12/Spiral-Matrix/index.html">
 <meta property="og:site_name" content="WzW&#39;s Blog">
-<meta property="og:description" content="problem description given two integers  m and n ,  return a matrix with $n \times m$ elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.($1 \leq m,n \leq 100$)  exam">
+<meta property="og:description" content="problem description  given two integers m and n , return a matrix with \(n \times m\) elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.(\(1 \leq m,n \leq 100\))">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-05-12T03:04:51.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spiral Matrix">
-<meta name="twitter:description" content="problem description given two integers  m and n ,  return a matrix with $n \times m$ elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.($1 \leq m,n \leq 100$)  exam">
+<meta name="twitter:description" content="problem description  given two integers m and n , return a matrix with \(n \times m\) elements (n rows, m columns), all elements form 1 to m*nof the matrix in spiral order.(\(1 \leq m,n \leq 100\))">
 
 
 
@@ -440,27 +440,27 @@
       
 
       
-        <h1 id="problem-description"><a href="#problem-description" class="headerlink" title="problem description"></a>problem description</h1><ul>
-<li><p>given two integers  <code>m</code> and <code>n</code> ,  return a matrix with $n \times m$ elements (<em>n</em> rows, <em>m</em> columns), all elements form 1 to <code>m*n</code>of the matrix in spiral order.($1 \leq m,n \leq 100$)</p>
-</li>
+        <h1 id="problem-description">problem description</h1>
+<ul>
+<li><p>given two integers <code>m</code> and <code>n</code> , return a matrix with <span class="math inline">\(n \times m\)</span> elements (<em>n</em> rows, <em>m</em> columns), all elements form 1 to <code>m*n</code>of the matrix in spiral order.(<span class="math inline">\(1 \leq m,n \leq 100\)</span>)</p></li>
 <li><p>example:</p>
 <blockquote>
-<p>input : </p>
+<p>input :</p>
 <p>3 3</p>
 <p>output :</p>
 <p>1 2 3</p>
 <p>8 9 4</p>
 <p>7 6 5</p>
-</blockquote>
-</li>
+</blockquote></li>
 </ul>
 <a id="more"></a>
 <ul>
 <li><a href="https://www.acwing.com/problem/content/description/758/" target="_blank" rel="noopener">problem url</a></li>
 </ul>
-<h1 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h1><ul>
+<h1 id="solution">solution</h1>
+<ul>
 <li>using <code>dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0}</code> to present four directions</li>
-<li>when it comes to corner, let  <code>d = (d + 1) % 4</code></li>
+<li>when it comes to corner, let <code>d = (d + 1) % 4</code></li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">110</span>;</span><br><span class="line"><span class="keyword">int</span> res[N][N];</span><br><span class="line"><span class="keyword">bool</span> st[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">int</span> dx[] = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;, dy[] = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, y = <span class="number">0</span>, d = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= m*n; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> a = x + dx[d], b = y + dy[d];</span><br><span class="line">        <span class="keyword">if</span>(a &gt;= n || a &lt; <span class="number">0</span> || b &gt;= m || b &lt; <span class="number">0</span> || st[a][b])&#123;</span><br><span class="line">            d = (d + <span class="number">1</span>) % <span class="number">4</span>;</span><br><span class="line">            a = x + dx[d];</span><br><span class="line">            b = y + dy[d];</span><br><span class="line">        &#125;</span><br><span class="line">        res[x][y] = i;</span><br><span class="line">        st[x][y] = <span class="literal">true</span>;</span><br><span class="line">        x = a, y = b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; res[i][j] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -824,6 +824,50 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
 
   
 
